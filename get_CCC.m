@@ -26,6 +26,7 @@ function CCC = get_CCC(expression_data)
             n = n + 1;
         end
     end
+
     Z = linkage(Y);
     CCC = cophenet(Z, Y);
 end

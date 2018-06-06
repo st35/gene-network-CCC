@@ -9,7 +9,6 @@ function CCC = get_CCC_random_net(expression_data, N)
     corr_mat_original = corr_mat;
 
     for T = 1:N
-
         for i = 1:num_genes
             for j = (i + 1):num_genes
                 RI = randi([1, num_genes]);
@@ -40,8 +39,10 @@ function CCC = get_CCC_random_net(expression_data, N)
                 n = n + 1;
             end
         end
+
         Z = linkage(Y);
         CCC_rand(1, T) = cophenet(Z, Y);
     end
+
     CCC = mean(CCC_rand);
 end
